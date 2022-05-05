@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class ColasUtils<T> {
+public class ColasUtils {
 
     private float numeros;
     private Object data[];
@@ -39,25 +39,25 @@ public class ColasUtils<T> {
         cantidadValores++;
     }
 
-    public void add(T element) {
+    public void add(float element) {
         insert(element, cantidadValores);
     }
 
-    public void enqueue (T element) {
+    public void enqueue (float element) {
         add(element);
     }
 
-    public T delete (int i) {
+    public  float delete (int i) {
         Object aux = data[i];
         for (int j = 0; j < cantidadValores; j++) {
             data[j] = data[j + 1];
         }
         cantidadValores--;
-        return (T) aux;
+        return (float) aux;
     }
 
-    public T  dequeue () {
-        return (T)  delete(0);
+    public float dequeue () {
+        return (float)  delete(0);
     }
 
     public float sumarValores() {
