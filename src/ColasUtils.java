@@ -1,6 +1,6 @@
 public class ColasUtils<T> {
 
-    private int numeros;
+    private float numeros;
     private Object data[];
     private int numeroValores;
 
@@ -29,6 +29,21 @@ public class ColasUtils<T> {
         insert(element, numeroValores);
     }
 
-    
+    public void enqueue (T element) {
+        add(element);
+    }
+
+    public T delete (int i) {
+        Object aux = data[i];
+        for (int j = 0; j < numeroValores; j++) {
+            data[j] = data[j + 1];
+        }
+        numeroValores--;
+        return (T) aux;
+    }
+
+    public T  dequeue () {
+        return (T)  delete(0);
+    }
 
 }
